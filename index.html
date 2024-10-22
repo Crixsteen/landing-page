@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefono di Ascolto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script> <!-- Script per il popup -->
+</head>
+<body>
+
+    <!-- Logo in alto a sinistra e pulsanti a destra del logo -->
+    <header>
+        <img src="logo.jpg" alt="Logo Telefono di Ascolto" class="logo">
+        <div class="button-group">
+            <a href="#faq">FAQ</a>
+            <a href="info.html">Info e Privacy</a> <!-- Modificato per puntare a info.html -->
+            <a href="donazione.html">Fai una donazione</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="margin-top: -50px;">
+        <div class="hero-text">
+            <h1><strong>A volte abbiamo solo bisogno di qualcuno che ci ascolti, senza giudizi.</strong></h1>
+            <p><strong>"Telefono di Ascolto"</strong> è qui per questo.</p>
+
+            <p>Offriamo un servizio di supporto emotivo <span style="font-weight: normal;">GRATUITO</span> e confidenziale per chiunque senta il bisogno di parlare di qualsiasi cosa, o abbia bisogno di supporto emotivo. Siamo qui per adolescenti che affrontano difficoltà, donne in cerca di ascolto, adulti che lottano contro ansia e stress, anziani che si sentono soli.</p>
+
+            <p>Le nostre chiamate e videochiamate sono uno spazio sicuro dove puoi sentirti accolto e compreso, senza pressioni. Il nostro servizio è <span style="font-weight: normal;">GRATUITO</span>, ma se vuoi, puoi supportarci con una donazione per aiutare chi ne ha bisogno.</p>
+
+            <p><strong>Non sei solo.</strong> Se hai bisogno di parlare, noi ci siamo. <strong>Compila il modulo</strong> e saremo qui per ascoltarti.</p>
+        </div>
+
+        <!-- Form centrato -->
+        <div class="form-container">
+            <h2><strong>Compila il modulo</strong></h2>
+            <form action="send_email.php" method="POST" class="contact-form">
+                <input type="text" id="name" name="name" placeholder="Nome" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <textarea id="description" name="description" rows="4" placeholder="Se vuoi dicci come ti senti."></textarea>
+                
+                <div class="radio-group">
+                    <input type="radio" id="call" name="contact_option" value="Chiama ora se hai bisogno" required>
+                    <label for="call" style="background-color: #ff99cc;" onclick="showPopup()">Chiama ora se hai bisogno</label>
+                    <input type="radio" id="info" name="contact_option" value="Chiedi informazioni" required>
+                    <label for="info" style="background-color: #ff99cc;">Chiedi informazioni</label>
+                </div>
+
+                <button type="submit" class="submit-button">Invia</button>
+                <p style="text-align: center; font-weight: bold; color: black;">OPPURE</p>
+                <a href="https://wa.me/393791710929" class="whatsapp-button">Chatta con noi su WhatsApp</a>
+            </form>
+        </div>
+
+        <!-- Testo aggiuntivo al di fuori del modulo -->
+        <p style="text-align: center; font-size: 0.8rem; color: black; margin-top: 10px; font-weight: bold;">
+            *NESSUN COSTO AGGIUNTIVO VERRÀ ADDEBITATO, SERVIZIO GRATUITO
+        </p>
+
+        <!-- Popup -->
+        <div id="popup" class="popup" style="display: none;">
+            <p>Rispondiamo dalle 9.30 alle 21.30. Ti preghiamo di chiamarci in questi orari per poterti aiutare al meglio. Grazie per la tua comprensione!</p>
+        </div>
+    </section>
+
+    <!-- Sezione FAQ -->
+    <section class="faq" id="faq">
+        <h2>Domande Frequenti (FAQ)</h2>
+
+        <div class="faq-item">
+            <h3>Cos'è Telefono di Ascolto?</h3>
+            <p>Telefono di Ascolto è un servizio amico, anonimo e confidenziale, dedicato a chi ha bisogno di parlare, condividere i propri pensieri o cercare un nuovo punto di vista. Offriamo supporto emotivo, ascolto e scambio di opinioni, ma non sostituiamo la terapia psicologica.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Il servizio è gratuito?</h3>
+            <p>Sì, il nostro servizio è gratuito per chiunque desideri chiamarci tra le 9:30 e le 21:00. Se desideri un accesso più flessibile, puoi scegliere l'abbonamento mensile a 8,99 euro, che ti permette di chiamarci a qualsiasi ora del giorno o della notte.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Come funziona l'abbonamento?</h3>
+            <p>Con un abbonamento di 8,99 euro al mese, puoi contattarci a qualsiasi ora. Puoi anche fare videochiamate, mantenendo la tua telecamera spenta se lo preferisci—noi saremo sempre visibili per offrirti un volto accogliente. Inoltre, puoi chattare con noi su WhatsApp, sia negli orari standard che in qualsiasi momento se sei abbonato.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Posso restare anonimo?</h3>
+            <p>Sì, il nostro servizio è completamente anonimo. Non registriamo informazioni personali né tracciamo le conversazioni. Vogliamo che tu ti senta a tuo agio e libero di esprimerti senza preoccupazioni. Rispettiamo la tua privacy in ogni momento.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Posso parlare con voi tramite chat?</h3>
+            <p>Sì, è possibile chattare con noi tramite WhatsApp durante gli orari standard (9:30-21:00). Se sei un abbonato, puoi scriverci in qualsiasi momento, anche di notte.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Cosa include la privacy garantita?</h3>
+            <p>Le conversazioni sono riservate e non verranno mai registrate né divulgate. Non raccogliamo dati personali e il tuo numero rimane anonimo. Non salviamo trascrizioni delle chiamate o delle chat. Tutti i dettagli condivisi con noi rimangono strettamente confidenziali.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Chi può usare questo servizio?</h3>
+            <p>Chiunque senta il bisogno di parlare. Il nostro servizio è aperto a tutti, indipendentemente dall'età, dal genere o dalle situazioni di vita.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Come posso contribuire?</h3>
+            <p>Puoi fare una donazione di qualsiasi importo per sostenere il nostro servizio. Le donazioni ci aiutano a restare disponibili per tutte le persone che hanno bisogno di essere ascoltate, ma non sono obbligatorie.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Siete psicologi?</h3>
+            <p>No, non siamo psicologi e non offriamo terapia. Il nostro è un servizio di ascolto e supporto amichevole, pensato per offrire conforto, un punto di vista diverso e un ambiente sicuro dove parlare.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Posso fare una videochiamata?</h3>
+            <p>Sì, puoi fare videochiamate. Se preferisci, puoi tenere la tua telecamera spenta, mentre la nostra sarà sempre accesa per rendere la conversazione più accogliente. Questa opzione è disponibile per chi sottoscrive l'abbonamento.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Come posso accedere al servizio premium?</h3>
+            <p>Puoi sottoscrivere l'abbonamento al costo di 8,99 euro al mese per ottenere accesso illimitato al nostro servizio. Questo include chiamate e chat a qualsiasi ora, oltre alla possibilità di fare videochiamate.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Posso chiamare più volte?</h3>
+            <p>Certamente! Puoi chiamarci ogni volta che senti il bisogno di parlare. Se hai un abbonamento, non ci sono limiti di orario.</p>
+        </div>
+    </section>
+
+    <!-- Icona Facebook in basso a destra -->
+<div class="facebook-follow">
+    <a href="https://www.facebook.com/profile.php?id=61567334693569" target="_blank">
+        <img src="images/facebook.png" alt="Seguici su Facebook">
+    </a>
+    <p>Seguici anche su Facebook</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
